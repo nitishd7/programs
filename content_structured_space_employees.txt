@@ -1,9 +1,9 @@
-EmployeeName EmployeeId Alias EmailAddress Phone ManagerId Location
-Vijay 1 vijay vijay@content.com 040-2323432 0 Hyderabad
-Rajgopal 2 rajgo rajgo@content.com 9000012345 1 Hyderabad
-Venkat 3 venkat venakt@content.com 080-2439004 1 Vijayawada
-Karthik 4 karthik karthik@content.org 080-45324354 2 Bangalore
-Rohit 5 rohit rohit@content.org 9875654329 2 Hyderabad
-Kaushik 6 kaushik kaushik@ctnt.com 8132424564 3 Bangalore
-Diveymaan 7 divey divey@ctnt.com 9001232319 4 Bangalore
-RajVarma 8 rajvarm rajvrm@content.com 987654321 3 Calcutta
+EmployeeName EmployeeId Alias EmailAddress Phone ManagerId Location Salary
+Vijay 1 vijay vijay@content.com 040-2323432 0 Hyderabad 20000000
+Rajgopal 2 rajgo rajgo@content.com 9000012345 1 Hyderabad 10000000
+Venkat 3 venkat venakt@content.com 080-2439004 1 Vijayawada 15000000
+Karthik 4 karthik karthik@content.org 080-45324354 2 Bangalore 12500000
+Rohit 5 rohit rohit@content.org 9875654329 2 Hyderabad 8000000
+Kaushik 6 kaushik kaushik@ctnt.com 8132424564 3 Bangalore 6000000
+Diveymaan 7 divey divey@ctnt.com 9001232319 4 Bangalore 7500000
+RajVarma 8 rajvarm rajvrm@content.com 987654321 3 Calcutta 5700000
