@@ -16,6 +16,8 @@ struct node{
 node * root;
 int tree_height=-1;
 int nelements = 0;
+int max_diameter = -1;
+node * d_node;
 
 node * insert_node(node *nd, int value){
 	if(nd == nullptr){
@@ -71,6 +73,17 @@ void postorder_traversal(node *nd){
 
 int height(node *nd);
 
+void preorder_traversal_folder_layout(node *nd, int lvl, char dir){
+	if(nd != nullptr){
+		for(int i = 0; i < 2 * lvl - 2; i++) cout << " ";
+		if(nd != root) cout << "--";
+		cout << nd->element << "(" << dir << ")" << endl;
+		preorder_traversal_folder_layout(nd->left, lvl + 1, 'l');
+		preorder_traversal_folder_layout(nd->right, lvl + 1, 'r');
+	}
+}
+
+
 void levelorder_traversal(node *nd){
 	if(nd != nullptr){
 		int lvl = (tree_height>-1 && root != nullptr)?tree_height:height(root);
@@ -111,7 +124,6 @@ void mirror_tree(node *nd){
 		node *tmpnd = nd->left;
 		nd->left = nd->right;
 		nd->right = tmpnd;
-		cout << nd->element << ", ";		
 	}
 }
 
@@ -135,9 +147,7 @@ void auto_fill(node *nd){
 	nelements = nvalues;
 }
 
-pair<node *, int> longest_diameter(node *nd){
-	static int max_diameter = -1;
-	static node * d_node; 
+pair<node *, int> longest_diameter(node *nd){ 
 	if(nd != nullptr){	
 		int l_ht = longest_diameter(nd->left).second;
 		int r_ht = longest_diameter(nd->right).second;
@@ -167,6 +177,7 @@ int main(){
 		cout << "7: print longest diameter of the tree" << endl;
 		cout << "8: search for an element" << endl;
 		cout << "9: autofill the tree" << endl;
+		cout << "10: print folder layout" << endl;
 		cin >> opcode;
 		switch(opcode){
 			case 1: 
@@ -189,8 +200,9 @@ int main(){
 				cout << tree_height;
 				break;
 			case 7:
-				long_d = longest_diameter(root);
-				if(long_d.first != nullptr) cout << long_d.first->element << ", " << long_d.second;
+				max_diameter = -1;
+				longest_diameter(root);
+				if(d_node != nullptr) cout << d_node->element << ", " << max_diameter;
 				break;
 			case 8:
 				cout << "Enter number to search : ";
@@ -200,6 +212,9 @@ int main(){
 				break;
 			case 9:
 				auto_fill(root);
+				break;
+			case 10:
+				preorder_traversal_folder_layout(root, 0, 'r');
 				break;
 			default:
 				break;
