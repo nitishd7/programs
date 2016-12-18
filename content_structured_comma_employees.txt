@@ -1,0 +1,9 @@
+EmployeeName,EmployeeId,Alias,EmailAddress,Phone,ManagerId,Location
+Vijay,1,vijay,vijay@content.com,040-2323432,0,Hyderabad
+Rajgopal,2,rajgo,rajgo@content.com,9000012345,1,Hyderabad
+Venkat,3,venkat,venakt@content.com,080-2439004,1,Vijayawada
+Karthik,4,karthik,karthik@content.org,080-45324354,2,Bangalore
+Rohit,5,rohit,rohit@content.org,9875654329,2,Hyderabad
+Kaushik,6,kaushik,kaushik@ctnt.com,8132424564,3,Bangalore
+Diveymaan,7,divey,divey@ctnt.com,9001232319,4,Bangalore
+RajVarma,8,rajvarm,rajvrm@content.com,987654321,3,Calcutta
