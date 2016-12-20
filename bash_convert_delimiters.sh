@@ -37,3 +37,28 @@ fi
 
 echo "sed $replace_regex $3 > $4"
 sed "$replace_regex" $3 >| $4
+
+: <<'END_OF_DOCS'
+Convert Delimiters script is used to convert the source file with a specific input based record delimiter to a destination file with a specific input based record delimiter.
+
+=head1 NAME
+	bash_convert_delimiter
+
+=head1 SYNOPSIS
+	bash_convert_delimiter SOURCE_DELIMITER DEST_DELIMITER SOURCE_FILE DEST_FILE
+
+=head1 OPTIONS
+	First argument: Source file delimiter
+	Second argument: Destination file delimiter
+	Third argument: Source file path and name
+	Fourth argument: Destination file path and name
+
+=head1 DESCRIPTION
+	So far we have covered the following delimiters implementation
+	1) Comma
+	2) Space
+
+=head1 LICENSE AND COPYRIGHT
+
+=cut
+END_OF_DOCS
