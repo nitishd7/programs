@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Tree.h"
+#include "ds_tree_header_c.h"
 
 /* ********************************************
     Display Tree for traversing through sub nodes.
@@ -38,7 +38,7 @@ void load_words(tree *main_tree, int count)
     FILE *fr;
     int i = 0;
 
-    fr = fopen("D:\\HolidaySamples\\C\\words.txt", "rt");
+    fr = fopen("./content_dictionary_words.txt", "rt");
     while(fgets(line, 80, fr) && i < count){
         printf("Loading %s...", line);
         add_node(main_tree, line);

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Stack.h"
+#include "ds_stack_header_c.h"
 
 int _top = -1;
 

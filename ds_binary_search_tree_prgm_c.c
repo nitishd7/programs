@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "BinarySearchTree.h"
+#include "ds_binary_search_tree_header_c.h"
 
 void print_tree(binary_search_tree_node *main_node)
 {

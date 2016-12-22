@@ -1,9 +1,9 @@
 /*Binary Tree*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "BinaryTree.h"
-#include "Stack.h"
-#include "Queue.h"
+#include "ds_binary_tree_header_c.h"
+#include "ds_stack_header_c.h"
+#include "ds_queue_header_c.h"
 
 binary_tree_node* create_node(char value, binary_tree_node *lnode, binary_tree_node *rnode){
 

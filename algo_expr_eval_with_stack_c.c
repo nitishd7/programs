@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "BinaryTree.h"
-#include "Stack.h"
+#include "ds_binary_tree_header_c.h"
+#include "ds_stack_header_c.h"
 
 stack *expr_stack;
 binary_tree_node *node[5];

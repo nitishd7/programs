@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Tree.h"
+#include "ds_tree_header_c.h"
 
 bool _is_initialized = false;
 

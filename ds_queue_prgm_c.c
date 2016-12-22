@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Queue.h"
+#include "ds_queue_header_c.h"
 
 
 queue *main_queue;

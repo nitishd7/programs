@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "BinarySearchTree.h"
+#include "ds_binary_search_tree_header_c.h"
 
 binary_search_tree_node* add_binary_search_node(binary_search_tree_node *main_node, void *new_value)
 {
@@ -43,7 +43,7 @@ binary_search_tree_node* search_binary_search_node(binary_search_tree_node *main
 {
     binary_search_tree_node *traverser_node = main_node, *temp_node = NULL;
     if(traverser_node!= NULL){
-        while((*(int *)traverser_node->value != *(int *)new_value) && (temp_node = (*(int *)traverser_node->value > *(int *)new_value)?traverser_node->left_node:traverser_node->right_node)!= NULL){
+        while((*(int *)traverser_node->value != *(int *)search_value) && (temp_node = (*(int *)traverser_node->value > *(int *)search_value)?traverser_node->left_node:traverser_node->right_node)!= NULL){
             traverser_node = temp_node;
         }
         if(temp_node != NULL) return traverser_node;
