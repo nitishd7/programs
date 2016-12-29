@@ -10,6 +10,7 @@ class progl_io_file_ops_java{
 		//create_basic_file();
 		//operation_using_writer_reader();
 		operation_write_read_using_wrappers();
+		operation_rename_delete_file_dir();
 	}
 
 	static void create_directory(){
@@ -17,7 +18,9 @@ class progl_io_file_ops_java{
 		try{
 			File file = new File(directoryName);
 			file.mkdir();
-		} catch(Exception e){}
+		} catch(Exception e){
+			//no IOException thrown
+		}
 	}
 
 	static void create_basic_file(){
@@ -67,5 +70,42 @@ class progl_io_file_ops_java{
 				System.out.print(readString + ", ");
 			}
 		} catch(IOException e){}
+	}
+
+	static void operation_rename_delete_file_dir(){
+		try{
+			File file = new File(directoryName, "content_file_prog_created.txt");
+			File rfile = new File(directoryName, "content_file_prog_renamed.txt");
+			file.renameTo(rfile);
+			System.out.println("Renamed file exists " + file.exists());
+			
+			File ofile = new File(directoryName, "content_file_prog_created.txt");
+			System.out.println("Does old file exists after rename " + ofile.exists());
+			
+			File dfile = new File(directoryName);
+			System.out.println("Directory deletion with existing members " + dfile.delete() + "\n");
+			
+			for(File f : dfile.listFiles()){
+				System.out.println(f.getName() + ", " + f.getCanonicalPath() + ", " + f.delete());
+				System.out.println();
+			}
+		
+			/*String[]entries = dfile.list();
+			for(String s: entries){
+			    File currentFile = new File(dfile.getPath(),s);
+			    currentFile.delete();
+			}*/
+		
+			//Thread.sleep(5000);
+			for(File f : dfile.listFiles()){
+				System.out.println(f.getName() + ", " + f.getCanonicalPath() + ", " + f.delete());
+			}
+			
+			System.out.println("Directory deletion of an empty directory " + dfile.delete() + ", "  + dfile.exists() + ", " + dfile.list().length);
+			System.out.println("Directory deletion of a non existing directory " + dfile.delete());
+		} catch(Exception e){
+			//no IOException thrown
+			System.out.println("Exception thrown");
+		}
 	}
 }
