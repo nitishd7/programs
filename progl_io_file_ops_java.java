@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 
 class progl_io_file_ops_java{
 
@@ -10,7 +11,8 @@ class progl_io_file_ops_java{
 		//create_basic_file();
 		//operation_using_writer_reader();
 		operation_write_read_using_wrappers();
-		operation_rename_delete_file_dir();
+		//operation_rename_delete_file_dir();
+		get_set_attributes();
 	}
 
 	static void create_directory(){
@@ -26,7 +28,7 @@ class progl_io_file_ops_java{
 	static void create_basic_file(){
 		try{
 			boolean newFile = false;
-			File file = new File(directoryName, "content_file_prog_created.txt");
+			File file = new File(directoryName, "content_file_old_io_1.txt");
 			System.out.println(file.exists());
 			newFile = file.createNewFile();
 			System.out.println(newFile);
@@ -38,7 +40,7 @@ class progl_io_file_ops_java{
 		char[] in = new char[50];
 		int size = 0;
 		try{
-			File file = new File(directoryName, "content_file_prog_created.txt");
+			File file = new File(directoryName, "content_file_old_io_1.txt");
 			FileWriter fw = new FileWriter(file);
 			fw.write("hello world\ntext completed\n");
 			fw.flush();
@@ -56,7 +58,7 @@ class progl_io_file_ops_java{
 	static void operation_write_read_using_wrappers(){
 		String readString;
 		try{
-			File file = new File(directoryName, "content_file_prog_created.txt");
+			File file = new File(directoryName, "content_file_old_io_1.txt");
 			PrintWriter pw = new PrintWriter(file);
 			pw.println("Hello World");
 			pw.println("Print Writer Testing");
@@ -72,14 +74,24 @@ class progl_io_file_ops_java{
 		} catch(IOException e){}
 	}
 
+	static void get_set_attributes(){
+		Date januaryFirst = new GregorianCalendar(2013, Calendar.JANUARY, 1).getTime();
+		File file = new File(directoryName, "content_file_old_io_1.txt");
+		file.setLastModified(januaryFirst.getTime());
+		System.out.println("LastModified: " + file.lastModified());
+		System.out.println("IsReadable: " + file.canRead());
+		System.out.println("IsWritable: " + file.canWrite());
+		System.out.println("IsExecutable: " + file.canExecute());
+	}
+
 	static void operation_rename_delete_file_dir(){
 		try{
-			File file = new File(directoryName, "content_file_prog_created.txt");
-			File rfile = new File(directoryName, "content_file_prog_renamed.txt");
+			File file = new File(directoryName, "content_file_old_io_1.txt");
+			File rfile = new File(directoryName, "content_file_old_io_2.txt");
 			file.renameTo(rfile);
 			System.out.println("Renamed file exists " + file.exists());
 			
-			File ofile = new File(directoryName, "content_file_prog_created.txt");
+			File ofile = new File(directoryName, "content_file_old_io_1.txt");
 			System.out.println("Does old file exists after rename " + ofile.exists());
 			
 			File dfile = new File(directoryName);
